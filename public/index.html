@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortener - Simple &amp; Fast</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">URL Shortener</h1>
+      <p class="app__subtitle">Paste a long link, get a short one in seconds.</p>
+    </header>
+
+    <!-- Shorten form -->
+    <form class="shorten-form" id="shorten-form" autocomplete="off">
+      <input
+        type="url"
+        id="url-input"
+        class="shorten-form__input"
+        placeholder="https://example.com/very/long/path..."
+        aria-label="Long URL"
+        required
+      />
+      <button type="submit" class="shorten-form__button" id="submit-btn">Shorten</button>
+    </form>
+
+    <!-- Result -->
+    <div class="result hidden" id="result">
+      <span class="result__label">Your short link:</span>
+      <div class="result__row">
+        <a class="result__link" id="result-link" href="#" target="_blank" rel="noopener"></a>
+        <button class="result__copy" id="copy-btn" type="button">Copy</button>
+      </div>
+      <p class="result__hint" id="result-hint"></p>
+    </div>
+
+    <p class="error hidden" id="error"></p>
+
+    <!-- Recent links -->
+    <section class="history">
+      <h2 class="history__title">Recent Links</h2>
+      <ul class="history__list" id="history-list">
+        <li class="history__empty">No links yet. Create your first one!</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
